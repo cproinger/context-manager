@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/mngr/src"
+    modelPluginID="mngr" modelName="Mngr" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>mngr.ecore</foreignModel>
+  <genPackages prefix="Mngr" disposableProviderFactory="true" ecorePackage="mngr.ecore#/">
+    <genClasses ecoreClass="mngr.ecore#//Manager">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mngr.ecore#//Manager/ownedState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mngr.ecore#//Manager/initialState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mngr.ecore#//Manager/finalState"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mngr.ecore#//Manager/contextParameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mngr.ecore#//Manager/managedElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mngr.ecore#//Manager/ownedTransition"/>
+    </genClasses>
+    <genClasses ecoreClass="mngr.ecore#//ManagerState">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mngr.ecore#//ManagerState/owningManager"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mngr.ecore#//ManagerState/outgoingTransition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mngr.ecore#//ManagerState/incomingTransition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerState/isStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerState/isEnd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerState/Prob"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mngr.ecore#//ManagerState/contextParameters"/>
+    </genClasses>
+    <genClasses ecoreClass="mngr.ecore#//ManagerTransition">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mngr.ecore#//ManagerTransition/owningManager"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mngr.ecore#//ManagerTransition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mngr.ecore#//ManagerTransition/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerTransition/input"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerTransition/output"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerTransition/transProb"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerTransition/transRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerTransition/Event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerTransition/Condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerTransition/Action"/>
+    </genClasses>
+    <genClasses ecoreClass="mngr.ecore#//ManagerParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mngr.ecore#//ManagerParameter/state"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mngr.ecore#//ManagerParameter/opaqueExpressions"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mngr.ecore#//ManagerParameter/owningManager"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerParameter/isInput"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerParameter/LitteralInteger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerParameter/LitteralString"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerParameter/LitteralBoolean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagerParameter/LitteralUnlimitedNatural"/>
+    </genClasses>
+    <genClasses ecoreClass="mngr.ecore#//ManagedElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference mngr.ecore#//ManagedElement/owningManager"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mngr.ecore#//ManagedElement/description"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Named" disposableProviderFactory="true" ecorePackage="named.ecore#/">
+    <genClasses image="false" ecoreClass="named.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute named.ecore#//NamedElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute named.ecore#//NamedElement/qualifiedName"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference named.ecore#//NamedElement/namespace"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="named.ecore#//Namespace">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference named.ecore#//Namespace/member"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference named.ecore#//Namespace/ownedMember"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Owner" disposableProviderFactory="true" ecorePackage="owner.ecore#/">
+    <genClasses image="false" ecoreClass="owner.ecore#//Element">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference owner.ecore#//Element/ownedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference owner.ecore#//Element/owner"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Elem" disposableProviderFactory="true" ecorePackage="elem.ecore#/">
+    <genClasses image="false" ecoreClass="elem.ecore#//Element"/>
+  </genPackages>
+  <genPackages prefix="Exp" disposableProviderFactory="true" ecorePackage="exp.ecore#/">
+    <genClasses image="false" ecoreClass="exp.ecore#//ValueSpecification">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference exp.ecore#//ValueSpecification/expression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exp.ecore#//ValueSpecification/owningConstraint"/>
+    </genClasses>
+    <genClasses ecoreClass="exp.ecore#//Expression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference exp.ecore#//Expression/operand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exp.ecore#//Expression/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="exp.ecore#//OpaqueExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exp.ecore#//OpaqueExpression/body"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exp.ecore#//OpaqueExpression/language"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Const" ecorePackage="const.ecore#/">
+    <genClasses ecoreClass="const.ecore#//Constraint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference const.ecore#//Constraint/constrainedElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference const.ecore#//Constraint/specification"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

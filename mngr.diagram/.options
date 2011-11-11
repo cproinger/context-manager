@@ -1,0 +1,7 @@
+# Tracing options for the mngr.diagram plug-in
+
+# Common issues
+mngr.diagram/debug=false
+
+# Visual IDs
+mngr.diagram/debug/visualID=false

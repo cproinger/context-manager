@@ -1,0 +1,127 @@
+-- @path Manager=/mngr2ctxmngr/model/mngr.ecore
+-- @path CtxManager=/mngr2ctxmngr/model/ctxmngr.ecore
+
+module mngr2ctxmngrND;
+create OUT : CtxManager from IN1 : Manager, IN2 : Manager;
+
+
+rule Root{
+	from
+		i1: Manager!Manager in IN1,
+		i2: Manager!Manager in IN2
+	to
+		o: CtxManager!ContextManager(
+			initialState <- thisModule.resolveTemp(Tuple{i1 = i1.initialState, i2 = i2.initialState},'o'),
+			combinedManager <- Manager!ManagerState.allInstances()
+		)
+	do{
+		for(p in i1.finalState){
+			for(f in i2.finalState){
+				o.finalState <- thisModule.resolveTemp(Tuple{i1 = p, i2 = f},'o');
+			}
+		}
+	}
+}
+
+rule Cartesian{
+	from
+		i1: Manager!ManagerState in IN1, 
+		i2: Manager!ManagerState in IN2
+	using{
+		t1 : Set(Manager!ManagerTransition) = Manager!ManagerTransition.allInstancesFrom('IN1')->asSet();	
+		t2 : Set(Manager!ManagerTransition) = Manager!ManagerTransition.allInstancesFrom('IN2')->asSet();
+		m1 : Manager!Manager = Manager!Manager.allInstancesFrom('IN1')->first();
+		m2 : Manager!Manager = Manager!Manager.allInstancesFrom('IN2')->first();
+	}
+	to
+		o: CtxManager!CtxState(
+			name <- i1.name+'-'+i2.name,
+			isEnd <- i1.isEnd and i2.isEnd,
+			isStart <- i1.isStart and i2.isStart,
+			managerStates <- Set{i1,i2},
+			owningManager <- thisModule.resolveTemp(Tuple{i1 = m1,i2 = m2},'o')
+		)
+	do{
+		for(p in t1->select(e | e.source = i1)){
+			for(f in Manager!ManagerState.allInstancesFrom('IN2')){
+				thisModule.makeTransition(i1,i2,p.target,f,p);
+			}
+		}
+		for(p in t2->select(e | e.source = i2)){
+			for(f in Manager!ManagerState.allInstancesFrom('IN1')){
+				thisModule.makeTransition(i1,i2,f,p.target,p);
+			}
+		}
+	
+	}
+}
+
+rule makeTransition(e1 : Manager!ManagerState, e2: Manager!ManagerState, p: Manager!ManagerState, f: Manager!ManagerState, t: Manager!ManagerTransition){
+	using{
+		m1  : Manager!Manager = Manager!Manager.allInstancesFrom('IN1')->first();
+		m2  : Manager!Manager = Manager!Manager.allInstancesFrom('IN2')->first();
+	}
+	to
+		o: CtxManager!CtxTransition(
+			
+			name <- e1.name+'-'+e2.name+'/'+p.name+'-'+f.name,
+			Action <- t.Action,
+			Condition <- t.Condition,
+			Event <- t.Event,
+			input <- t.input,
+			output <- t.output,
+			transProb <- t.transProb,
+			transRate <- t.transRate,
+			managerTransition <- t,
+			source <- thisModule.resolveTemp(Tuple{i1 = e1,i2 = e2},'o'),
+			target <- thisModule.resolveTemp(Tuple{i1 = p,i2 = f},'o'),
+			owningManager <- thisModule.resolveTemp(Tuple{i1 = m1,i2 = m2},'o')
+		)
+}
+
+rule makeParameter{
+	from
+		i: Manager!ManagerParameter
+	using{
+		m1  : Manager!Manager = Manager!Manager.allInstancesFrom('IN1')->first();
+		m2  : Manager!Manager = Manager!Manager.allInstancesFrom('IN2')->first();
+		ms1 : Set(Manager!ManagerState) = Manager!ManagerState.allInstancesFrom('IN1');
+		ms2 : Set(Manager!ManagerState) = Manager!ManagerState.allInstancesFrom('IN2');
+	}
+	to
+		o: CtxManager!ContextParameter(
+			name <- i.name,
+			isInput <- i.isInput,
+			LitteralBoolean <- i.LitteralBoolean,
+			LitteralUnlimitedNatural <- i.LitteralUnlimitedNatural,
+			LitteralInteger <- i.LitteralInteger,
+			LitteralString <- i.LitteralString,
+			opaqueExpressions <- i.opaqueExpressions, --resolveTemp risolta automaticamente
+			owningManager <- thisModule.resolveTemp(Tuple{i1 = m1,i2 = m2},'o')
+		)
+	do{
+		
+		for(p in i.state){
+			if(ms1->includes(p)){
+				for(f in ms2){
+					o.state <- thisModule.resolveTemp(Tuple{i1=p,i2=f},'o');
+				}
+			}else{
+				for(f in ms1){
+					o.state <- thisModule.resolveTemp(Tuple{i1=f,i2=p},'o');
+				}
+			}
+		}
+	}
+}
+
+
+rule makeOpaqueExpressions{
+	from
+		i: Manager!OpaqueExpression
+	to
+		o: CtxManager!OpaqueExpression(
+			body <- i.body,
+			language <- i.language
+		)
+}

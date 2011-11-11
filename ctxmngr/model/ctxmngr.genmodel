@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ctxmngr/src"
+    modelPluginID="ctxmngr" modelName="Ctxmngr" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../mngr/model/mngr.genmodel#//mngr ../../mngr/model/mngr.genmodel#//named ../../mngr/model/mngr.genmodel#//owner ../../mngr/model/mngr.genmodel#//elem ../../mngr/model/mngr.genmodel#//exp ../../mngr/model/mngr.genmodel#//const">
+  <foreignModel>ctxmngr.ecore</foreignModel>
+  <genPackages prefix="Ctxmngr" disposableProviderFactory="true" ecorePackage="ctxmngr.ecore#/">
+    <genClasses ecoreClass="ctxmngr.ecore#//ContextManager">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//ContextManager/ownedState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//ContextManager/initialState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//ContextManager/finalState"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//ContextManager/contextParameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//ContextManager/combinedManager"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//ContextManager/remoteFirings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//ContextManager/ownedTransition"/>
+    </genClasses>
+    <genClasses ecoreClass="ctxmngr.ecore#//CtxState">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ctxmngr.ecore#//CtxState/owningManager"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//CtxState/outgoingTransition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//CtxState/incomingTransition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//CtxState/isStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//CtxState/isEnd"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//CtxState/contextParameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//CtxState/managerStates"/>
+    </genClasses>
+    <genClasses ecoreClass="ctxmngr.ecore#//CtxTransition">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ctxmngr.ecore#//CtxTransition/owningManager"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//CtxTransition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//CtxTransition/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//CtxTransition/input"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//CtxTransition/output"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//CtxTransition/transProb"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//CtxTransition/managerTransition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//CtxTransition/Action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//CtxTransition/Event"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//CtxTransition/Condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//CtxTransition/transRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//CtxTransition/isRemote"/>
+    </genClasses>
+    <genClasses ecoreClass="ctxmngr.ecore#//ContextParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//ContextParameter/state"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//ContextParameter/opaqueExpressions"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ctxmngr.ecore#//ContextParameter/owningManager"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//ContextParameter/LitteralInteger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//ContextParameter/LitteralString"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//ContextParameter/LitteralBoolean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//ContextParameter/LitteralUnlimitedNatural"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ctxmngr.ecore#//ContextParameter/isInput"/>
+    </genClasses>
+    <genClasses ecoreClass="ctxmngr.ecore#//RemoteFiringDependency">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//RemoteFiringDependency/fired"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//RemoteFiringDependency/firing"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ctxmngr.ecore#//RemoteFiringDependency/owningManager"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ctxmngr.ecore#//RemoteFiringDependency/represents"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

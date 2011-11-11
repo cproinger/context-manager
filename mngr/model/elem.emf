@@ -1,0 +1,6 @@
+@namespace(uri="http://www.kermeta.org/elem", prefix="elem")
+package elem;
+
+abstract class Element{
+   
+}

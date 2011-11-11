@@ -1,0 +1,11 @@
+@namespace(uri="http://www.kermeta.org/owner", prefix="owner")
+package owner;
+
+import "platform:/resource/mngr/model/elem.ecore";
+
+abstract class Element extends elem.Element{
+  derived ref Element[*]#owner ownedElement;
+  derived ref Element#ownedElement owner;
+}
+
+

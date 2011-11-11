@@ -1,0 +1,16 @@
+@namespace(uri="http://www.kermeta.org/named",prefix="named")
+package named;
+
+import "platform:/resource/mngr/model/owner.ecore";
+
+abstract class NamedElement extends owner.Element {
+  attr String name;
+  derived attr String qualifiedName;
+  readonly derived ref Namespace#ownedMember namespace;
+}
+
+abstract class Namespace extends NamedElement {
+  readonly derived ref NamedElement[*] member;
+  readonly derived val NamedElement[*]#namespace ownedMember;
+}
+

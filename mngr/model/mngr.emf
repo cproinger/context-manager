@@ -1,0 +1,74 @@
+@Ecore(invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot")
+@namespace(uri="http://www.kermeta.org/mngr", prefix="mngr")
+package mngr;
+
+import "platform:/resource/mngr/model/named.ecore";
+import "platform:/resource/mngr/model/exp.ecore";
+
+@Ecore(constraints="DuplicateTransition ManagerStateNameUnique InitialStateNoIncomingTransitions ManagedElementNameUnique InitialStateNoFinalState finalStateMustHaveIncomingTransition FinalStatesNoOutgoingTransitions ManagerTransitionNameUnique InitialStateMustBeStart ManagerParameterNameUnique FinalStateMustBeEnd")
+@gmf.diagram(model.extension="mngr", diagram.extension="mngr_diagram")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(DuplicateTransition="ManagerTransition.allInstances()->forAll(t1 : ManagerTransition, t2 : ManagerTransition | t1 <> t2 implies t1.target <> t2.target or t1.source <> t2.source)", ManagerStateNameUnique="ManagerState.allInstances()->forAll(m1 : ManagerState, m2 : ManagerState | m1 <> m2 implies m1.name <> m2.name)", InitialStateNoIncomingTransitions="initialState.incomingTransition->size() = 0", ManagedElementNameUnique="ManagedElement.allInstances()->forAll(m1 : ManagedElement, m2 : ManagedElement | m1 <> m2 implies m1.name <> m2.name)", InitialStateNoFinalState="finalState->forAll(s : ManagerState | s <> initialState)", finalStateMustHaveIncomingTransition="finalState->forAll(s : ManagerState | s.incomingTransition->size() > 0)", FinalStatesNoOutgoingTransitions="finalState->forAll(s : ManagerState | s.outgoingTransition->size() = 0)", ManagerTransitionNameUnique="ManagerTransition.allInstances()->forAll(m1 : ManagerTransition, m2 : ManagerTransition | m1 <> m2 implies m1.name <> m2.name)", InitialStateMustBeStart="initialState.isStart and not initialState.isEnd", ManagerParameterNameUnique="ManagerParameter.allInstances()->forAll(m1 : ManagerParameter, m2 : ManagerParameter | m1 <> m2 implies m1.name <> m2.name)", FinalStateMustBeEnd="finalState->forAll(s : ManagerState | s.isEnd and not s.isStart)")
+class Manager extends named.NamedElement {
+  val ManagerState[*]#owningManager ownedState;
+  ref ManagerState[1] initialState;
+  ref ManagerState[*] finalState;
+  val ManagerParameter[*]#owningManager contextParameters;
+  val ManagedElement[+]#owningManager managedElement;
+  val ManagerTransition[*]#owningManager ownedTransition;
+}
+
+@Ecore(constraints="EndStateNofinalState UndefinedTransitions InitialStateNoFinalState StartStateNoInitialState OutgoingTransitionsProbabilitySumMustBe1 ManagerStateNameUndefined")
+@gmf.node(figure="figures.ManagerStateFigure", label="name", label.icon="false", label.placement="external", tool.name="ManagerState", tool.description="Create a new ManagerState", tool.small.bundle="mngr.figures", tool.small.path="icons/ManagerStateS.png")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(EndStateNofinalState="if isEnd then owningManager.finalState->includes(self) else true endif", UndefinedTransitions="if not owningManager.initialState.oclAsSet()->includes(self) and not owningManager.finalState->includes(self) then outgoingTransition->size() > 0 and incomingTransition->size() > 0 else true endif", InitialStateNoFinalState="not (isStart and isEnd)", StartStateNoInitialState="if isStart then owningManager.initialState.oclAsSet()->includes(self) else true endif", OutgoingTransitionsProbabilitySumMustBe1="if not owningManager.finalState->includes(self) then outgoingTransition->collect(transProb)->iterate(p : Real ; res : Real = 0 | res + p) = 1.0 else true endif", ManagerStateNameUndefined="not name.oclIsUndefined()")
+class ManagerState extends named.NamedElement {
+  ref Manager[1]#ownedState owningManager;
+  ref ManagerTransition[*]#source outgoingTransition;
+  ref ManagerTransition[*]#target incomingTransition;
+  attr boolean isStart;
+  attr boolean isEnd;
+  attr double Prob;
+
+  @gmf.link(style="dot", width="2", color="190,190,190", tool.name="ManagerParameter", tool.description="Create a new link form a ManagerState and a ManagerParameter", tool.small.bundle="mngr.figures", tool.small.path="icons/ParameterLinkS.png")
+  ref ManagerParameter[*]#state contextParameters;
+}
+
+@Ecore(constraints="TransProbMax1 ManagerTransitionUndefinedName")
+@gmf.link(label="transProb, Event, Action, Condition", label.pattern="{0}:{1}:{2}:{3}", target.decoration="closedarrow", width="2", source="source", target="target", style="dot", color="0,0,0", tool.name="ManagerTransition", tool.description="Create a new transition from source state to target state", tool.small.bundle="mngr.figures", tool.small.path="icons/transitionS.png")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(TransProbMax1="transProb <= 1.0 and not transProb.oclIsUndefined()", ManagerTransitionUndefinedName="not name.oclIsUndefined()")
+class ManagerTransition extends named.NamedElement {
+  ref Manager[1]#ownedTransition owningManager;
+  ref ManagerState[1]#outgoingTransition source;
+  ref ManagerState[1]#incomingTransition target;
+  attr String input;
+  attr String output;
+  attr double transProb;
+  attr double transRate;
+  attr String[*] Event;
+  attr String[*] Condition;
+  attr String[*] Action;
+}
+
+@Ecore(constraints="ManagerParameterUndefinedName")
+@gmf.node(figure="figures.ManagerParameterFigure", label="name", label.icon="false", label.placement="external", tool.name="ManagerParameter", tool.description="Create a new ManagerParameter", tool.small.bundle="mngr.figures", tool.small.path="icons/ManagerParameterS.png")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(ManagerParameterUndefinedName="not name.oclIsUndefined()")
+class ManagerParameter extends named.NamedElement {
+  ref ManagerState[*]#contextParameters state;
+
+  @gmf.link(style="dot", width="2", color="97,94,63", tool.name="OpaqueExpression", tool.description="Create a new link form an OpaqueExpression and a ManagerParameter", tool.small.bundle="mngr.figures", tool.small.path="icons/OpaqueExpressionS.png")
+  val exp.OpaqueExpression[*] opaqueExpressions;
+  ref Manager[1]#contextParameters owningManager;
+  attr boolean[1] isInput;
+  attr int[*] LitteralInteger;
+  attr String[*] LitteralString;
+  attr boolean[*] LitteralBoolean;
+  attr double[*] LitteralUnlimitedNatural;
+}
+
+@Ecore(constraints="ManagedElementUndefinedName")
+@gmf.node(figure="figures.ManagedElementFigure", label="name", label.icon="false", label.placement="external", tool.name="ManagedElement", tool.description="Create a new ManagedElement", tool.small.bundle="mngr.figures", tool.small.path="icons/ManagedElementS.png")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(ManagedElementUndefinedName="not name.oclIsUndefined()")
+class ManagedElement extends named.NamedElement {
+  ref Manager[1]#managedElement owningManager;
+  attr String description;
+}
+

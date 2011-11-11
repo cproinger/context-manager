@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ctxmngr.presentation.CtxmngrModelWizardID"
+            name="%_UI_CtxmngrModelWizard_label"
+            class="ctxmngr.presentation.CtxmngrModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CtxmngrModelFile.gif">
+         <description>%_UI_CtxmngrModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="ctxmngr.presentation.CtxmngrEditorID"
+            name="%_UI_CtxmngrEditor_label"
+            icon="icons/full/obj16/CtxmngrModelFile.gif"
+            extensions="ctxmngr"
+            class="ctxmngr.presentation.CtxmngrEditor"
+            contributorClass="ctxmngr.presentation.CtxmngrActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

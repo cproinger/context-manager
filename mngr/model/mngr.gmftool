@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmftool:ToolRegistry xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="mngrPalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Objects"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ManagedElement"
+          description="Create a new ManagedElement">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ManagedElementS.png"
+            bundle="mngr.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ManagerParameter"
+          description="Create a new ManagerParameter">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ManagerParameterS.png"
+            bundle="mngr.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ManagerState"
+          description="Create a new ManagerState">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ManagerStateS.png"
+            bundle="mngr.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="OpaqueExpression"
+          description="Create a new OpaqueExpression">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/OpaqueExpressionS.png"
+            bundle="mngr.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Connections"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ManagerParameter"
+          description="Create a new link form a ManagerState and a ManagerParameter">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/ParameterLinkS.png"
+            bundle="mngr.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ManagerTransition"
+          description="Create a new transition from source state to target state">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/transitionS.png"
+            bundle="mngr.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="OpaqueExpression"
+          description="Create a new link form an OpaqueExpression and a ManagerParameter">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/OpaqueExpressionS.png"
+            bundle="mngr.figures"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="mngr.presentation.MngrModelWizardID"
+            name="%_UI_MngrModelWizard_label"
+            class="mngr.presentation.MngrModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MngrModelFile.gif">
+         <description>%_UI_MngrModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="mngr.presentation.MngrEditorID"
+            name="%_UI_MngrEditor_label"
+            icon="icons/full/obj16/MngrModelFile.gif"
+            extensions="mngr"
+            class="mngr.presentation.MngrEditor"
+            contributorClass="mngr.presentation.MngrActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="exp.presentation.ExpModelWizardID"
+            name="%_UI_ExpModelWizard_label"
+            class="exp.presentation.ExpModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExpModelFile.gif">
+         <description>%_UI_ExpModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="exp.presentation.ExpEditorID"
+            name="%_UI_ExpEditor_label"
+            icon="icons/full/obj16/ExpModelFile.gif"
+            extensions="exp"
+            class="exp.presentation.ExpEditor"
+            contributorClass="exp.presentation.ExpActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="const_.presentation.ConstModelWizardID"
+            name="%_UI_ConstModelWizard_label"
+            class="const_.presentation.ConstModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ConstModelFile.gif">
+         <description>%_UI_ConstModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="const_.presentation.ConstEditorID"
+            name="%_UI_ConstEditor_label"
+            icon="icons/full/obj16/ConstModelFile.gif"
+            extensions="const"
+            class="const_.presentation.ConstEditor"
+            contributorClass="const_.presentation.ConstActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,12 @@
+@namespace(uri="http://www.kermeta.org/const", prefix="const")
+package const;
+
+import "platform:/resource/mngr/model/named.ecore";
+import "platform:/resource/mngr/model/exp.ecore";
+import "platform:/resource/mngr/model/owner.ecore";
+
+class Constraint extends named.NamedElement {
+  ref owner.Element[*] constrainedElement;
+  val exp.ValueSpecification specification;
+}
+
