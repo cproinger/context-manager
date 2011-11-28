@@ -213,7 +213,7 @@ public interface CtxTransition extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Manager Transition</em>' reference list.
 	 * @see ctxmngr.CtxmngrPackage#getCtxTransition_ManagerTransition()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EList<ManagerTransition> getManagerTransition();

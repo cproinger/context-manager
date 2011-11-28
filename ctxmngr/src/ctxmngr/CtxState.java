@@ -180,7 +180,7 @@ public interface CtxState extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Manager States</em>' reference list.
 	 * @see ctxmngr.CtxmngrPackage#getCtxState_ManagerStates()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EList<ManagerState> getManagerStates();

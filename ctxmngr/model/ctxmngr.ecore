@@ -12,8 +12,8 @@
         eType="#//CtxState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextParameters" upperBound="-1"
         eType="#//ContextParameter" containment="true" eOpposite="#//ContextParameter/owningManager"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="combinedManager" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass ../../mngr/model/mngr.ecore#//Manager"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="combinedManager" upperBound="-1"
+        eType="ecore:EClass ../../mngr/model/mngr.ecore#//Manager"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="remoteFirings" upperBound="-1"
         eType="#//RemoteFiringDependency" containment="true" eOpposite="#//RemoteFiringDependency/owningManager"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTransition" upperBound="-1"
@@ -30,8 +30,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextParameters" upperBound="-1"
         eType="#//ContextParameter" eOpposite="#//ContextParameter/state"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="managerStates" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass ../../mngr/model/mngr.ecore#//ManagerState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managerStates" upperBound="-1"
+        eType="ecore:EClass ../../mngr/model/mngr.ecore#//ManagerState"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CtxTransition" eSuperTypes="../../mngr/model/named.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningManager" lowerBound="1"
@@ -43,8 +43,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="output" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transProb" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="managerTransition" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass ../../mngr/model/mngr.ecore#//ManagerTransition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managerTransition" upperBound="-1"
+        eType="ecore:EClass ../../mngr/model/mngr.ecore#//ManagerTransition"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Action" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Event" upperBound="-1"

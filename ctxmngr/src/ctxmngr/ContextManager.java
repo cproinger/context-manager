@@ -124,7 +124,7 @@ public interface ContextManager extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Combined Manager</em>' reference list.
 	 * @see ctxmngr.CtxmngrPackage#getContextManager_CombinedManager()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Manager> getCombinedManager();
