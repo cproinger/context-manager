@@ -25,8 +25,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.emf.commands.core,
  org.eclipse.gmf.runtime.emf.ui.properties,
  org.eclipse.gmf.runtime.diagram.ui,
- org.eclipse.gmf.runtime.diagram.ui.printing,
- org.eclipse.gmf.runtime.diagram.ui.printing.render,
  org.eclipse.gmf.runtime.diagram.ui.properties,
  org.eclipse.gmf.runtime.diagram.ui.providers,
  org.eclipse.gmf.runtime.diagram.ui.providers.ide,
@@ -35,10 +33,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
  org.eclipse.draw2d;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
- mngr.figures;visibility:=reexport,
  mngr;visibility:=reexport,
  mngr.edit;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: figures

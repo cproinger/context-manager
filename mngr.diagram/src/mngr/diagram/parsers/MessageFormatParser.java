@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.parsers;
 
 import java.text.FieldPosition;

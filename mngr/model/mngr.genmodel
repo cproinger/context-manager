@@ -84,7 +84,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exp.ecore#//OpaqueExpression/language"/>
     </genClasses>
   </genPackages>
-  <genPackages prefix="Const" ecorePackage="const.ecore#/">
+  <genPackages prefix="Const" disposableProviderFactory="true" ecorePackage="const.ecore#/">
     <genClasses ecoreClass="const.ecore#//Constraint">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference const.ecore#//Constraint/constrainedElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference const.ecore#//Constraint/specification"/>

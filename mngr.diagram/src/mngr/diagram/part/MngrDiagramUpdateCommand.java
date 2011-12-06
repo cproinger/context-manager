@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.part;
 
 import java.util.Iterator;

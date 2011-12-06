@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.edit.parts;
 
 import java.util.Collections;

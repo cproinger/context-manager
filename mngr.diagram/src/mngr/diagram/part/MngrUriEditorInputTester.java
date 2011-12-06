@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.part;
 
 import org.eclipse.core.expressions.PropertyTester;

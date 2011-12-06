@@ -705,7 +705,7 @@ public class MngrPackageImpl extends EPackageImpl implements MngrPackage {
 		  (managerEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "DuplicateTransition ManagerStateNameUnique InitialStateNoIncomingTransitions ManagedElementNameUnique InitialStateNoFinalState finalStateMustHaveIncomingTransition FinalStatesNoOutgoingTransitions ManagerTransitionNameUnique InitialStateMustBeStart ManagerParameterNameUnique FinalStateMustBeEnd"
+			 "constraints", "DuplicateTransition ManagerStateNameUnique ManagedElementNameUnique InitialStateNoFinalState FinalStatesNoOutgoingTransitions ManagerTransitionNameUnique finalStateMustHaveIncomingTransition InitialStateMustBeStart ManagerParameterNameUnique FinalStateMustBeEnd"
 		   });				
 		addAnnotation
 		  (managerStateEClass, 
@@ -764,12 +764,11 @@ public class MngrPackageImpl extends EPackageImpl implements MngrPackage {
 		   new String[] {
 			 "DuplicateTransition", "ManagerTransition.allInstances()->forAll(t1 : ManagerTransition, t2 : ManagerTransition | t1 <> t2 implies t1.target <> t2.target or t1.source <> t2.source)",
 			 "ManagerStateNameUnique", "ManagerState.allInstances()->forAll(m1 : ManagerState, m2 : ManagerState | m1 <> m2 implies m1.name <> m2.name)",
-			 "InitialStateNoIncomingTransitions", "initialState.incomingTransition->size() = 0",
 			 "ManagedElementNameUnique", "ManagedElement.allInstances()->forAll(m1 : ManagedElement, m2 : ManagedElement | m1 <> m2 implies m1.name <> m2.name)",
 			 "InitialStateNoFinalState", "finalState->forAll(s : ManagerState | s <> initialState)",
-			 "finalStateMustHaveIncomingTransition", "finalState->forAll(s : ManagerState | s.incomingTransition->size() > 0)",
 			 "FinalStatesNoOutgoingTransitions", "finalState->forAll(s : ManagerState | s.outgoingTransition->size() = 0)",
 			 "ManagerTransitionNameUnique", "ManagerTransition.allInstances()->forAll(m1 : ManagerTransition, m2 : ManagerTransition | m1 <> m2 implies m1.name <> m2.name)",
+			 "finalStateMustHaveIncomingTransition", "finalState->forAll(s : ManagerState | s.incomingTransition->size() > 0)",
 			 "InitialStateMustBeStart", "initialState.isStart and not initialState.isEnd",
 			 "ManagerParameterNameUnique", "ManagerParameter.allInstances()->forAll(m1 : ManagerParameter, m2 : ManagerParameter | m1 <> m2 implies m1.name <> m2.name)",
 			 "FinalStateMustBeEnd", "finalState->forAll(s : ManagerState | s.isEnd and not s.isStart)"

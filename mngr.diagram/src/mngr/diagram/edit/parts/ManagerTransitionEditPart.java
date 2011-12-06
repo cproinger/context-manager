@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.edit.parts;
 
 import mngr.diagram.edit.policies.ManagerTransitionItemSemanticEditPolicy;

@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.part;
 
 import org.eclipse.osgi.util.NLS;
@@ -331,6 +328,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Manager_1000_links;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_ManagerState_2001_incominglinks;
 
 	/**
@@ -351,17 +353,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Manager_1000_links;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ManagerStateContextParameters_4002_target;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ManagerStateContextParameters_4002_source;
+	public static String NavigatorGroupName_OpaqueExpression_2004_incominglinks;
 
 	/**
 	 * @generated
@@ -376,17 +368,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_OpaqueExpression_2004_incominglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_ManagerTransition_4001_target;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_ManagerTransition_4001_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ManagerStateContextParameters_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ManagerStateContextParameters_4002_source;
 
 	/**
 	 * @generated

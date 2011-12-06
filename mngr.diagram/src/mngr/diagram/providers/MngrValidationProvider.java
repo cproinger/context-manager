@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.providers;
 
 import mngr.diagram.edit.parts.ManagerEditPart;

@@ -2,9 +2,7 @@
 <gmfgen:GenEditorGenerator xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel" diagramFileExtension="mngr_diagram"
-    domainFileExtension="mngr"
-    copyrightText="">
+    xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel">
   <diagram
       visualID="1000"
       editPartClassName="ManagerEditPart"
@@ -14,8 +12,7 @@
       creationWizardCategoryID="mngr.category1"
       validationProviderPriority="Low"
       validationEnabled="true"
-      validationDecorators="true"
-      liveValidationUIFeedback="true">
+      validationDecorators="true">
     <diagramRunTimeClass
         href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
     <elementType
@@ -24,8 +21,6 @@
     <viewmap
         xsi:type="gmfgen:FigureViewmap"
         figureQualifiedClassName="org.eclipse.draw2d.FreeformLayer"/>
-    <containsShortcutsTo>mngr</containsShortcutsTo>
-    <shortcutsProvidedFor>mngr</shortcutsProvidedFor>
     <domainDiagramElement
         href="mngr.genmodel#//mngr/Manager"/>
     <topLevelNodes
@@ -241,7 +236,8 @@
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
-            viewPattern="TransProb: {0}">
+            viewPattern="TransProb: {0}"
+            editPattern="">
           <metaFeatures
               href="mngr.genmodel#//mngr/ManagerTransition/transProb"/>
         </modelFacet>
@@ -263,7 +259,8 @@
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
-            viewPattern="Actions: {0}">
+            viewPattern="Actions: {0}"
+            editPattern="">
           <metaFeatures
               href="mngr.genmodel#//mngr/ManagerTransition/Action"/>
         </modelFacet>
@@ -285,7 +282,8 @@
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
-            viewPattern="Conditions: {0}">
+            viewPattern="Conditions: {0}"
+            editPattern="">
           <metaFeatures
               href="mngr.genmodel#//mngr/ManagerTransition/Condition"/>
         </modelFacet>
@@ -307,7 +305,8 @@
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
-            viewPattern="Events: {0}">
+            viewPattern="Events: {0}"
+            editPattern="">
           <metaFeatures
               href="mngr.genmodel#//mngr/ManagerTransition/Event"/>
         </modelFacet>
@@ -404,25 +403,25 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ManagedElement"
-            description="Create a new ManagedElement"
+            description="Creates a new ManagedElement"
             smallIconPath="/mngr.figures/icons/ManagedElementS.png"
             genNodes="//@diagram/@topLevelNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ManagerParameter"
-            description="Create a new ManagerParameter"
+            description="Creates a new ManagerParameter"
             smallIconPath="/mngr.figures/icons/ManagerParameterS.png"
             genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ManagerState"
-            description="Create a new ManagerState"
+            description="Creates a new ManagerState"
             smallIconPath="/mngr.figures/icons/ManagerStateS.png"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="OpaqueExpression"
-            description="Create a new OpaqueExpression"
+            description="Creates a new OpaqueExpression"
             smallIconPath="/mngr.figures/icons/OpaqueExpressionS.png"
             genNodes="//@diagram/@topLevelNodes.3"/>
       </groups>
@@ -432,19 +431,19 @@
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ManagerParameter"
-            description="Create a new link form a ManagerState and a ManagerParameter"
+            description="Creates a new link form a ManagerState and a ManagerParameter"
             smallIconPath="/mngr.figures/icons/ParameterLinkS.png"
             genLinks="//@diagram/@links.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ManagerTransition"
-            description="Create a new transition from source state to target state"
+            description="Creates a new transition from source state to target state"
             smallIconPath="/mngr.figures/icons/transitionS.png"
             genLinks="//@diagram/@links.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="OpaqueExpression"
-            description="Create a new link form an OpaqueExpression and a ManagerParameter"
+            description="Creates a new link form an OpaqueExpression and a ManagerParameter"
             smallIconPath="/mngr.figures/icons/OpaqueExpressionS.png"
             genLinks="//@diagram/@links.2"/>
       </groups>
@@ -475,11 +474,9 @@
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin
-      printingEnabled="true">
+  <plugin>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
-    <requiredPlugins>mngr.figures</requiredPlugins>
   </plugin>
   <editor/>
   <navigator>

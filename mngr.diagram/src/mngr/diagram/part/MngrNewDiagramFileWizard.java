@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.part;
 
 import java.io.IOException;

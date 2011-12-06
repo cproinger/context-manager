@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
-<!--
-
--->
 <plugin>
 
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
@@ -87,16 +84,6 @@
                <GlobalActionId actionId="save">
                </GlobalActionId>
             </ElementType>        
-         </ViewId>
-      </GlobalActionHandlerProvider>
-      <GlobalActionHandlerProvider
-         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
-         id="MngrPresentationPrint">
-         <Priority name="Lowest"/>
-         <ViewId id="mngr.diagram.part.MngrDiagramEditorID">
-            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
-               <GlobalActionId actionId="print"/>
-            </ElementType>
          </ViewId>
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
@@ -253,10 +240,6 @@
       <?gmfgen generated="true"?>
       <viewProvider class="mngr.diagram.providers.MngrViewProvider">
          <Priority name="Lowest"/>
-         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
-            <method name="getType()" value="mngr"/>
-         </object>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Mngr"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003"/>
@@ -295,7 +278,7 @@
          <object class="mngr.diagram.edit.parts.ManagerParameterEditPart" id="ManagerParameter_2002"/>
          <object class="mngr.diagram.edit.parts.ManagedElementEditPart" id="ManagedElement_2003"/>
          <object class="mngr.diagram.edit.parts.OpaqueExpressionEditPart" id="OpaqueExpression_2004"/>
-         <context elements="Manager_1000,ManagerState_2001,ManagerParameter_2002,ManagedElement_2003,OpaqueExpression_2004"/>
+         <context elements="Manager_1000,ManagerState_2001,ManagerParameter_2002,ManagedElement_2003,OpaqueExpression_2004,"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -311,17 +294,6 @@
       <ParserProvider class="mngr.diagram.providers.MngrParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
-   </extension>
-
-   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
-      <?gmfgen generated="true"?>
-      <decoratorProvider class="mngr.diagram.providers.MngrShortcutsDecoratorProvider">
-         <Priority name="Lowest"/>
-         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2001,2002,2003,2004"/>
-         </object>
-         <context decoratorTargets="generated-top-nodes"/>
-      </decoratorProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
@@ -438,17 +410,6 @@
        </propertyTester>
    </extension>
 
-	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
-      <?gmfgen generated="true"?>
-       <propertyTester
-           id="mngr.diagram.ShortcutPropertyTester"
-           type="org.eclipse.gmf.runtime.notation.View"
-           namespace="mngr.diagram"
-           properties="isShortcut"
-           class="mngr.diagram.part.MngrShortcutPropertyTester">
-       </propertyTester>
-   </extension>
-
 	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
       <?gmfgen generated="true"?>
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
@@ -482,17 +443,11 @@
         	      <test property="org.eclipse.core.resources.extension" value="mngr_diagram"/>
                </and>
                <instanceof value="mngr.diagram.navigator.MngrAbstractNavigatorItem"/>
-           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
-           	      <test property="mngr.diagram.isShortcut"/>
-           	   </adapt>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
          	   <instanceof value="mngr.diagram.navigator.MngrAbstractNavigatorItem"/>
-           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
-           	      <test property="mngr.diagram.isShortcut"/>
-           	   </adapt>
             </or>
          </possibleChildren>
          <commonSorter 
@@ -536,9 +491,6 @@
          <enablement>
             <or>
                <instanceof value="mngr.diagram.navigator.MngrAbstractNavigatorItem"/>
-           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
-           	      <test property="mngr.diagram.isShortcut"/>
-           	   </adapt>
             </or>
          </enablement>
       </actionProvider>

@@ -10,7 +10,7 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Manager" eSuperTypes="named.ecore#//NamedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="DuplicateTransition ManagerStateNameUnique InitialStateNoIncomingTransitions ManagedElementNameUnique InitialStateNoFinalState finalStateMustHaveIncomingTransition FinalStatesNoOutgoingTransitions ManagerTransitionNameUnique InitialStateMustBeStart ManagerParameterNameUnique FinalStateMustBeEnd"/>
+      <details key="constraints" value="DuplicateTransition ManagerStateNameUnique ManagedElementNameUnique InitialStateNoFinalState FinalStatesNoOutgoingTransitions ManagerTransitionNameUnique finalStateMustHaveIncomingTransition InitialStateMustBeStart ManagerParameterNameUnique FinalStateMustBeEnd"/>
     </eAnnotations>
     <eAnnotations source="gmf.diagram">
       <details key="model.extension" value="mngr"/>
@@ -19,12 +19,11 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="DuplicateTransition" value="ManagerTransition.allInstances()->forAll(t1 : ManagerTransition, t2 : ManagerTransition | t1 &lt;> t2 implies t1.target &lt;> t2.target or t1.source &lt;> t2.source)"/>
       <details key="ManagerStateNameUnique" value="ManagerState.allInstances()->forAll(m1 : ManagerState, m2 : ManagerState | m1 &lt;> m2 implies m1.name &lt;> m2.name)"/>
-      <details key="InitialStateNoIncomingTransitions" value="initialState.incomingTransition->size() = 0"/>
       <details key="ManagedElementNameUnique" value="ManagedElement.allInstances()->forAll(m1 : ManagedElement, m2 : ManagedElement | m1 &lt;> m2 implies m1.name &lt;> m2.name)"/>
       <details key="InitialStateNoFinalState" value="finalState->forAll(s : ManagerState | s &lt;> initialState)"/>
-      <details key="finalStateMustHaveIncomingTransition" value="finalState->forAll(s : ManagerState | s.incomingTransition->size() > 0)"/>
       <details key="FinalStatesNoOutgoingTransitions" value="finalState->forAll(s : ManagerState | s.outgoingTransition->size() = 0)"/>
       <details key="ManagerTransitionNameUnique" value="ManagerTransition.allInstances()->forAll(m1 : ManagerTransition, m2 : ManagerTransition | m1 &lt;> m2 implies m1.name &lt;> m2.name)"/>
+      <details key="finalStateMustHaveIncomingTransition" value="finalState->forAll(s : ManagerState | s.incomingTransition->size() > 0)"/>
       <details key="InitialStateMustBeStart" value="initialState.isStart and not initialState.isEnd"/>
       <details key="ManagerParameterNameUnique" value="ManagerParameter.allInstances()->forAll(m1 : ManagerParameter, m2 : ManagerParameter | m1 &lt;> m2 implies m1.name &lt;> m2.name)"/>
       <details key="FinalStateMustBeEnd" value="finalState->forAll(s : ManagerState | s.isEnd and not s.isStart)"/>

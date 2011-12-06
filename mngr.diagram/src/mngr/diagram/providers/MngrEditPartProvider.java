@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.providers;
 
 import java.lang.ref.WeakReference;

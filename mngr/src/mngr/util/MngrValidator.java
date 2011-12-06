@@ -122,12 +122,11 @@ public class MngrValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(manager, diagnostics, context);
 		if (result || diagnostics != null) result &= validateManager_DuplicateTransition(manager, diagnostics, context);
 		if (result || diagnostics != null) result &= validateManager_ManagerStateNameUnique(manager, diagnostics, context);
-		if (result || diagnostics != null) result &= validateManager_InitialStateNoIncomingTransitions(manager, diagnostics, context);
 		if (result || diagnostics != null) result &= validateManager_ManagedElementNameUnique(manager, diagnostics, context);
 		if (result || diagnostics != null) result &= validateManager_InitialStateNoFinalState(manager, diagnostics, context);
-		if (result || diagnostics != null) result &= validateManager_finalStateMustHaveIncomingTransition(manager, diagnostics, context);
 		if (result || diagnostics != null) result &= validateManager_FinalStatesNoOutgoingTransitions(manager, diagnostics, context);
 		if (result || diagnostics != null) result &= validateManager_ManagerTransitionNameUnique(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validateManager_finalStateMustHaveIncomingTransition(manager, diagnostics, context);
 		if (result || diagnostics != null) result &= validateManager_InitialStateMustBeStart(manager, diagnostics, context);
 		if (result || diagnostics != null) result &= validateManager_ManagerParameterNameUnique(manager, diagnostics, context);
 		if (result || diagnostics != null) result &= validateManager_FinalStateMustBeEnd(manager, diagnostics, context);
@@ -193,35 +192,6 @@ public class MngrValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the InitialStateNoIncomingTransitions constraint of '<em>Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String MANAGER__INITIAL_STATE_NO_INCOMING_TRANSITIONS__EEXPRESSION = "initialState.incomingTransition->size() = 0";
-
-	/**
-	 * Validates the InitialStateNoIncomingTransitions constraint of '<em>Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateManager_InitialStateNoIncomingTransitions(Manager manager, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(MngrPackage.Literals.MANAGER,
-				 manager,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "InitialStateNoIncomingTransitions",
-				 MANAGER__INITIAL_STATE_NO_INCOMING_TRANSITIONS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
 	 * The cached validation expression for the ManagedElementNameUnique constraint of '<em>Manager</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -280,35 +250,6 @@ public class MngrValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the finalStateMustHaveIncomingTransition constraint of '<em>Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String MANAGER__FINAL_STATE_MUST_HAVE_INCOMING_TRANSITION__EEXPRESSION = "finalState->forAll(s : ManagerState | s.incomingTransition->size() > 0)";
-
-	/**
-	 * Validates the finalStateMustHaveIncomingTransition constraint of '<em>Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateManager_finalStateMustHaveIncomingTransition(Manager manager, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(MngrPackage.Literals.MANAGER,
-				 manager,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "finalStateMustHaveIncomingTransition",
-				 MANAGER__FINAL_STATE_MUST_HAVE_INCOMING_TRANSITION__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
 	 * The cached validation expression for the FinalStatesNoOutgoingTransitions constraint of '<em>Manager</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -361,6 +302,35 @@ public class MngrValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "ManagerTransitionNameUnique",
 				 MANAGER__MANAGER_TRANSITION_NAME_UNIQUE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the finalStateMustHaveIncomingTransition constraint of '<em>Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MANAGER__FINAL_STATE_MUST_HAVE_INCOMING_TRANSITION__EEXPRESSION = "finalState->forAll(s : ManagerState | s.incomingTransition->size() > 0)";
+
+	/**
+	 * Validates the finalStateMustHaveIncomingTransition constraint of '<em>Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateManager_finalStateMustHaveIncomingTransition(Manager manager, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(MngrPackage.Literals.MANAGER,
+				 manager,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "finalStateMustHaveIncomingTransition",
+				 MANAGER__FINAL_STATE_MUST_HAVE_INCOMING_TRANSITION__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

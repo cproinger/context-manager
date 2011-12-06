@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.part;
 
 import mngr.Manager;
@@ -124,8 +121,7 @@ public class MngrVisualIDRegistry {
 		}
 		String containerModelID = mngr.diagram.part.MngrVisualIDRegistry
 				.getModelID(containerView);
-		if (!ManagerEditPart.MODEL_ID.equals(containerModelID)
-				&& !"mngr".equals(containerModelID)) { //$NON-NLS-1$
+		if (!ManagerEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
@@ -168,8 +164,7 @@ public class MngrVisualIDRegistry {
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = mngr.diagram.part.MngrVisualIDRegistry
 				.getModelID(containerView);
-		if (!ManagerEditPart.MODEL_ID.equals(containerModelID)
-				&& !"mngr".equals(containerModelID)) { //$NON-NLS-1$
+		if (!ManagerEditPart.MODEL_ID.equals(containerModelID)) {
 			return false;
 		}
 		int containerVisualID;

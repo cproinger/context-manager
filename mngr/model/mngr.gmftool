@@ -12,7 +12,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="ManagedElement"
-          description="Create a new ManagedElement">
+          description="Creates a new ManagedElement">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ManagedElementS.png"
@@ -23,7 +23,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="ManagerParameter"
-          description="Create a new ManagerParameter">
+          description="Creates a new ManagerParameter">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ManagerParameterS.png"
@@ -34,7 +34,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="ManagerState"
-          description="Create a new ManagerState">
+          description="Creates a new ManagerState">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ManagerStateS.png"
@@ -45,7 +45,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="OpaqueExpression"
-          description="Create a new OpaqueExpression">
+          description="Creates a new OpaqueExpression">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/OpaqueExpressionS.png"
@@ -61,7 +61,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="ManagerParameter"
-          description="Create a new link form a ManagerState and a ManagerParameter">
+          description="Creates a new link form a ManagerState and a ManagerParameter">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ParameterLinkS.png"
@@ -72,7 +72,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="ManagerTransition"
-          description="Create a new transition from source state to target state">
+          description="Creates a new transition from source state to target state">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/transitionS.png"
@@ -83,7 +83,7 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="OpaqueExpression"
-          description="Create a new link form an OpaqueExpression and a ManagerParameter">
+          description="Creates a new link form an OpaqueExpression and a ManagerParameter">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/OpaqueExpressionS.png"

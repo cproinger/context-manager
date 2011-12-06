@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.edit.policies;
 
 import mngr.diagram.edit.commands.ManagedElementCreateCommand;

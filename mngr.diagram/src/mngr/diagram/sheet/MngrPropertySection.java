@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.sheet;
 
 import java.util.ArrayList;

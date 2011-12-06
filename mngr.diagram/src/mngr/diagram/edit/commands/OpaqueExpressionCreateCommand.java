@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.edit.commands;
 
 import org.eclipse.core.commands.ExecutionException;

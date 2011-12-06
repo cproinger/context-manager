@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.part;
 
 import java.util.Collection;
@@ -38,14 +35,6 @@ import exp.OpaqueExpression;
  * @generated
  */
 public class MngrDiagramUpdater {
-
-	/**
-	 * @generated
-	 */
-	public static boolean isShortcutOrphaned(View view) {
-		return !view.isSetElement() || view.getElement() == null
-				|| view.getElement().eIsProxy();
-	}
 
 	/**
 	 * @generated

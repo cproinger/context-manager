@@ -1,6 +1,3 @@
-/*
- * 
- */
 package mngr.diagram.navigator;
 
 import mngr.diagram.part.MngrDiagramEditorPlugin;
