@@ -153,6 +153,19 @@ public class MngrDiagramEditor extends DiagramDocumentEditor implements
 	public void gotoMarker(IMarker marker) {
 		MarkerNavigationService.getInstance().gotoMarker(this, marker);
 	}
+	
+	@Override
+	public void doSave(org.eclipse.core.runtime.IProgressMonitor progressMonitor) {
+		ValRes valRes = ValRes.getInstance();
+		valRes.setResult(true);
+		mngr.diagram.part.ValidateAction.runValidation(this.getDiagram());
+		boolean res = valRes.getResult();
+		if(res){
+			super.doSave(progressMonitor);
+		}
+		
+		
+	}
 
 	/**
 	 * @generated

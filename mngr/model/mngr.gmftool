@@ -16,7 +16,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ManagedElementS.png"
-            bundle="mngr.figures"/>
+            bundle="mngr.diagram"/>
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>
@@ -27,7 +27,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ManagerParameterS.png"
-            bundle="mngr.figures"/>
+            bundle="mngr.diagram"/>
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>
@@ -38,7 +38,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ManagerStateS.png"
-            bundle="mngr.figures"/>
+            bundle="mngr.diagram"/>
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>
@@ -49,7 +49,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/OpaqueExpressionS.png"
-            bundle="mngr.figures"/>
+            bundle="mngr.diagram"/>
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>
@@ -65,7 +65,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ParameterLinkS.png"
-            bundle="mngr.figures"/>
+            bundle="mngr.diagram"/>
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>
@@ -76,7 +76,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/transitionS.png"
-            bundle="mngr.figures"/>
+            bundle="mngr.diagram"/>
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>
@@ -87,7 +87,7 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/OpaqueExpressionS.png"
-            bundle="mngr.figures"/>
+            bundle="mngr.diagram"/>
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>

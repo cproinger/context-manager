@@ -33,7 +33,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see mngr.MngrPackage#getManagerParameter()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ManagerParameterUndefinedName'"
- *        annotation="gmf.node figure='figures.ManagerParameterFigure' label='name' label.icon='false' label.placement='external' tool.name='ManagerParameter' tool.description='Create a new ManagerParameter' tool.small.bundle='mngr.figures' tool.small.path='icons/ManagerParameterS.png'"
+ *        annotation="gmf.node figure='figures.ManagerParameterFigure' label='name' label.icon='false' label.placement='external' tool.name='ManagerParameter' tool.description='Creates a new ManagerParameter' tool.small.bundle='mngr.diagram' tool.small.path='icons/ManagerParameterS.png'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot ManagerParameterUndefinedName='not name.oclIsUndefined()'"
  * @generated
  */
@@ -68,7 +68,7 @@ public interface ManagerParameter extends NamedElement {
 	 * @return the value of the '<em>Opaque Expressions</em>' containment reference list.
 	 * @see mngr.MngrPackage#getManagerParameter_OpaqueExpressions()
 	 * @model containment="true"
-	 *        annotation="gmf.link style='dot' width='2' color='97,94,63' tool.name='OpaqueExpression' tool.description='Create a new link form an OpaqueExpression and a ManagerParameter' tool.small.bundle='mngr.figures' tool.small.path='icons/OpaqueExpressionS.png'"
+	 *        annotation="gmf.link style='dot' width='2' color='97,94,63' tool.name='OpaqueExpression' tool.description='Creates a new link form an OpaqueExpression and a ManagerParameter' tool.small.bundle='mngr.diagram' tool.small.path='icons/OpaqueExpressionS.png'"
 	 * @generated
 	 */
 	EList<OpaqueExpression> getOpaqueExpressions();

@@ -56,7 +56,8 @@ rule Cartesian{
 	}
 }
 
-rule makeTransition(e1 : Manager!ManagerState, e2: Manager!ManagerState, p: Manager!ManagerState, f: Manager!ManagerState, t: Manager!ManagerTransition){
+rule makeTransition(e1 : Manager!ManagerState, e2: Manager!ManagerState, p: Manager!ManagerState, 
+					f: Manager!ManagerState, t: Manager!ManagerTransition){
 	using{
 		m1  : Manager!Manager = Manager!Manager.allInstancesFrom('IN1')->first();
 		m2  : Manager!Manager = Manager!Manager.allInstancesFrom('IN2')->first();

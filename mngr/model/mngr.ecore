@@ -51,8 +51,8 @@
       <details key="label.icon" value="false"/>
       <details key="label.placement" value="external"/>
       <details key="tool.name" value="ManagerState"/>
-      <details key="tool.description" value="Create a new ManagerState"/>
-      <details key="tool.small.bundle" value="mngr.figures"/>
+      <details key="tool.description" value="Creates a new ManagerState"/>
+      <details key="tool.small.bundle" value="mngr.diagram"/>
       <details key="tool.small.path" value="icons/ManagerStateS.png"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
@@ -79,8 +79,8 @@
         <details key="width" value="2"/>
         <details key="color" value="190,190,190"/>
         <details key="tool.name" value="ManagerParameter"/>
-        <details key="tool.description" value="Create a new link form a ManagerState and a ManagerParameter"/>
-        <details key="tool.small.bundle" value="mngr.figures"/>
+        <details key="tool.description" value="Creates a new link form a ManagerState and a ManagerParameter"/>
+        <details key="tool.small.bundle" value="mngr.diagram"/>
         <details key="tool.small.path" value="icons/ParameterLinkS.png"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -99,8 +99,8 @@
       <details key="style" value="dot"/>
       <details key="color" value="0,0,0"/>
       <details key="tool.name" value="ManagerTransition"/>
-      <details key="tool.description" value="Create a new transition from source state to target state"/>
-      <details key="tool.small.bundle" value="mngr.figures"/>
+      <details key="tool.description" value="Creates a new transition from source state to target state"/>
+      <details key="tool.small.bundle" value="mngr.diagram"/>
       <details key="tool.small.path" value="icons/transitionS.png"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
@@ -134,8 +134,8 @@
       <details key="label.icon" value="false"/>
       <details key="label.placement" value="external"/>
       <details key="tool.name" value="ManagerParameter"/>
-      <details key="tool.description" value="Create a new ManagerParameter"/>
-      <details key="tool.small.bundle" value="mngr.figures"/>
+      <details key="tool.description" value="Creates a new ManagerParameter"/>
+      <details key="tool.small.bundle" value="mngr.diagram"/>
       <details key="tool.small.path" value="icons/ManagerParameterS.png"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
@@ -150,8 +150,8 @@
         <details key="width" value="2"/>
         <details key="color" value="97,94,63"/>
         <details key="tool.name" value="OpaqueExpression"/>
-        <details key="tool.description" value="Create a new link form an OpaqueExpression and a ManagerParameter"/>
-        <details key="tool.small.bundle" value="mngr.figures"/>
+        <details key="tool.description" value="Creates a new link form an OpaqueExpression and a ManagerParameter"/>
+        <details key="tool.small.bundle" value="mngr.diagram"/>
         <details key="tool.small.path" value="icons/OpaqueExpressionS.png"/>
       </eAnnotations>
     </eStructuralFeatures>
@@ -178,8 +178,8 @@
       <details key="label.icon" value="false"/>
       <details key="label.placement" value="external"/>
       <details key="tool.name" value="ManagedElement"/>
-      <details key="tool.description" value="Create a new ManagedElement"/>
-      <details key="tool.small.bundle" value="mngr.figures"/>
+      <details key="tool.description" value="Creates a new ManagedElement"/>
+      <details key="tool.small.bundle" value="mngr.diagram"/>
       <details key="tool.small.path" value="icons/ManagedElementS.png"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">

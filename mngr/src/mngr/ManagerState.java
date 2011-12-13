@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see mngr.MngrPackage#getManagerState()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='EndStateNofinalState UndefinedTransitions InitialStateNoFinalState StartStateNoInitialState OutgoingTransitionsProbabilitySumMustBe1 ManagerStateNameUndefined'"
- *        annotation="gmf.node figure='figures.ManagerStateFigure' label='name' label.icon='false' label.placement='external' tool.name='ManagerState' tool.description='Create a new ManagerState' tool.small.bundle='mngr.figures' tool.small.path='icons/ManagerStateS.png'"
+ *        annotation="gmf.node figure='figures.ManagerStateFigure' label='name' label.icon='false' label.placement='external' tool.name='ManagerState' tool.description='Creates a new ManagerState' tool.small.bundle='mngr.diagram' tool.small.path='icons/ManagerStateS.png'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot EndStateNofinalState='if isEnd then owningManager.finalState->includes(self) else true endif' UndefinedTransitions='if not owningManager.initialState.oclAsSet()->includes(self) and not owningManager.finalState->includes(self) then outgoingTransition->size() > 0 and incomingTransition->size() > 0 else true endif' InitialStateNoFinalState='not (isStart and isEnd)' StartStateNoInitialState='if isStart then owningManager.initialState.oclAsSet()->includes(self) else true endif' OutgoingTransitionsProbabilitySumMustBe1='if not owningManager.finalState->includes(self) then outgoingTransition->collect(transProb)->iterate(p : Real ; res : Real = 0 | res + p) = 1.0 else true endif' ManagerStateNameUndefined='not name.oclIsUndefined()'"
  * @generated
  */
@@ -191,7 +191,7 @@ public interface ManagerState extends NamedElement {
 	 * @see mngr.MngrPackage#getManagerState_ContextParameters()
 	 * @see mngr.ManagerParameter#getState
 	 * @model opposite="state"
-	 *        annotation="gmf.link style='dot' width='2' color='190,190,190' tool.name='ManagerParameter' tool.description='Create a new link form a ManagerState and a ManagerParameter' tool.small.bundle='mngr.figures' tool.small.path='icons/ParameterLinkS.png'"
+	 *        annotation="gmf.link style='dot' width='2' color='190,190,190' tool.name='ManagerParameter' tool.description='Creates a new link form a ManagerState and a ManagerParameter' tool.small.bundle='mngr.diagram' tool.small.path='icons/ParameterLinkS.png'"
 	 * @generated
 	 */
 	EList<ManagerParameter> getContextParameters();

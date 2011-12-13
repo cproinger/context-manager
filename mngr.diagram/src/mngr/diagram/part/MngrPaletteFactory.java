@@ -66,7 +66,7 @@ public class MngrPaletteFactory {
 				Collections.singletonList(MngrElementTypes.ManagedElement_2003));
 		entry.setId("createManagedElement1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MngrDiagramEditorPlugin
-				.findImageDescriptor("/mngr.figures/icons/ManagedElementS.png")); //$NON-NLS-1$
+				.findImageDescriptor("/mngr.diagram/icons/ManagedElementS.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -82,7 +82,7 @@ public class MngrPaletteFactory {
 						.singletonList(MngrElementTypes.ManagerParameter_2002));
 		entry.setId("createManagerParameter2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MngrDiagramEditorPlugin
-				.findImageDescriptor("/mngr.figures/icons/ManagerParameterS.png")); //$NON-NLS-1$
+				.findImageDescriptor("/mngr.diagram/icons/ManagerParameterS.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -97,7 +97,7 @@ public class MngrPaletteFactory {
 				Collections.singletonList(MngrElementTypes.ManagerState_2001));
 		entry.setId("createManagerState3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MngrDiagramEditorPlugin
-				.findImageDescriptor("/mngr.figures/icons/ManagerStateS.png")); //$NON-NLS-1$
+				.findImageDescriptor("/mngr.diagram/icons/ManagerStateS.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -113,7 +113,7 @@ public class MngrPaletteFactory {
 						.singletonList(MngrElementTypes.OpaqueExpression_2004));
 		entry.setId("createOpaqueExpression4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MngrDiagramEditorPlugin
-				.findImageDescriptor("/mngr.figures/icons/OpaqueExpressionS.png")); //$NON-NLS-1$
+				.findImageDescriptor("/mngr.diagram/icons/OpaqueExpressionS.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -129,7 +129,7 @@ public class MngrPaletteFactory {
 						.singletonList(MngrElementTypes.ManagerStateContextParameters_4002));
 		entry.setId("createManagerParameter1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MngrDiagramEditorPlugin
-				.findImageDescriptor("/mngr.figures/icons/ParameterLinkS.png")); //$NON-NLS-1$
+				.findImageDescriptor("/mngr.diagram/icons/ParameterLinkS.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -145,7 +145,7 @@ public class MngrPaletteFactory {
 						.singletonList(MngrElementTypes.ManagerTransition_4001));
 		entry.setId("createManagerTransition2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MngrDiagramEditorPlugin
-				.findImageDescriptor("/mngr.figures/icons/transitionS.png")); //$NON-NLS-1$
+				.findImageDescriptor("/mngr.diagram/icons/transitionS.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -161,7 +161,7 @@ public class MngrPaletteFactory {
 						.singletonList(MngrElementTypes.ManagerParameterOpaqueExpressions_4003));
 		entry.setId("createOpaqueExpression3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(MngrDiagramEditorPlugin
-				.findImageDescriptor("/mngr.figures/icons/OpaqueExpressionS.png")); //$NON-NLS-1$
+				.findImageDescriptor("/mngr.diagram/icons/OpaqueExpressionS.png")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

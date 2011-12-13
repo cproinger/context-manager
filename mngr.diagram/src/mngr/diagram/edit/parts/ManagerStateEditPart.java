@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import mngr.ManagerState;
 import mngr.diagram.edit.policies.ManagerStateCanonicalEditPolicy;
 import mngr.diagram.edit.policies.ManagerStateItemSemanticEditPolicy;
 import mngr.diagram.part.MngrVisualIDRegistry;
@@ -15,6 +16,8 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
@@ -122,16 +125,42 @@ public class ManagerStateEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ManagerStateFigure();
+		primaryShape = new ManagerStateFigure();
+		ManagerStateFigure figure = (ManagerStateFigure) primaryShape;
+		ManagerState manager = (ManagerState) getNotationView().getElement();
+		if(manager.isIsStart()) figure.InitialFigure();
+		if(manager.isIsEnd()) figure.FinalFigure();
+		if(!manager.isIsStart() && !manager.isIsEnd()) figure.NormalFigure();
+		return primaryShape;
 	}
 
+	protected void handleNotificationEvent(Notification event) {
+		if (event.getFeature() instanceof EAttribute){
+			ManagerStateFigure figure = (ManagerStateFigure) this.getPrimaryShape();
+			EAttribute eAttribute = (EAttribute) event.getFeature();
+			ManagerState manager = (ManagerState) getNotationView().getElement();
+			if(eAttribute.getName().equals("isStart")){
+				if(event.getNewBooleanValue() && !manager.isIsEnd()) figure.InitialFigure();
+				if(!event.getNewBooleanValue() && manager.isIsEnd()) figure.FinalFigure();
+				if(!event.getNewBooleanValue() && !manager.isIsEnd()) figure.NormalFigure();
+			}
+			if(eAttribute.getName().equals("isEnd")){
+				if(event.getNewBooleanValue()  && !manager.isIsStart()) figure.FinalFigure();
+				if(!event.getNewBooleanValue()  && manager.isIsStart()) figure.InitialFigure();
+				if(!event.getNewBooleanValue()  && !manager.isIsStart()) figure.NormalFigure();
+			}
+		}
+	super.handleNotificationEvent(event);
+	}
+
+	
 	/**
 	 * @generated
 	 */
 	public ManagerStateFigure getPrimaryShape() {
 		return (ManagerStateFigure) primaryShape;
 	}
-
+	
 	/**
 	 * @generated
 	 */

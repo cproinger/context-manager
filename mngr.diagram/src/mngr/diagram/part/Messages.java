@@ -328,7 +328,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Manager_1000_links;
+	public static String NavigatorGroupName_ManagerStateContextParameters_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ManagerStateContextParameters_4002_source;
 
 	/**
 	 * @generated
@@ -343,17 +348,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ManagerParameter_2002_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_ManagerParameter_2002_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_OpaqueExpression_2004_incominglinks;
+	public static String NavigatorGroupName_Manager_1000_links;
 
 	/**
 	 * @generated
@@ -378,12 +373,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ManagerStateContextParameters_4002_target;
+	public static String NavigatorGroupName_ManagerParameter_2002_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_ManagerStateContextParameters_4002_source;
+	public static String NavigatorGroupName_ManagerParameter_2002_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_OpaqueExpression_2004_incominglinks;
 
 	/**
 	 * @generated

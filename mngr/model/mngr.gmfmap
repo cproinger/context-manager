@@ -88,8 +88,7 @@
         href="mngr.ecore#//ManagerTransition"/>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"
-        viewPattern="TransProb: {0}"
-        editPattern="">
+        viewPattern="TransProb: {0}">
       <diagramLabel
           href="mngr.gmfgraph#ManagerTransitionLabel"/>
       <features
@@ -97,8 +96,7 @@
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"
-        viewPattern="Actions: {0}"
-        editPattern="">
+        viewPattern="Actions: {0}">
       <diagramLabel
           href="mngr.gmfgraph#ManagerTransitionLabel"/>
       <features
@@ -106,8 +104,7 @@
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"
-        viewPattern="Conditions: {0}"
-        editPattern="">
+        viewPattern="Conditions: {0}">
       <diagramLabel
           href="mngr.gmfgraph#ManagerTransitionLabel"/>
       <features
@@ -115,8 +112,7 @@
     </labelMappings>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping"
-        viewPattern="Events: {0}"
-        editPattern="">
+        viewPattern="Events: {0}">
       <diagramLabel
           href="mngr.gmfgraph#ManagerTransitionLabel"/>
       <features

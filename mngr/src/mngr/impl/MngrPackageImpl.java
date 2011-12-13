@@ -822,8 +822,8 @@ public class MngrPackageImpl extends EPackageImpl implements MngrPackage {
 			 "label.icon", "false",
 			 "label.placement", "external",
 			 "tool.name", "ManagerState",
-			 "tool.description", "Create a new ManagerState",
-			 "tool.small.bundle", "mngr.figures",
+			 "tool.description", "Creates a new ManagerState",
+			 "tool.small.bundle", "mngr.diagram",
 			 "tool.small.path", "icons/ManagerStateS.png"
 		   });								
 		addAnnotation
@@ -835,8 +835,8 @@ public class MngrPackageImpl extends EPackageImpl implements MngrPackage {
 			 "label.icon", "false",
 			 "label.placement", "external",
 			 "tool.name", "ManagerParameter",
-			 "tool.description", "Create a new ManagerParameter",
-			 "tool.small.bundle", "mngr.figures",
+			 "tool.description", "Creates a new ManagerParameter",
+			 "tool.small.bundle", "mngr.diagram",
 			 "tool.small.path", "icons/ManagerParameterS.png"
 		   });					
 		addAnnotation
@@ -848,8 +848,8 @@ public class MngrPackageImpl extends EPackageImpl implements MngrPackage {
 			 "label.icon", "false",
 			 "label.placement", "external",
 			 "tool.name", "ManagedElement",
-			 "tool.description", "Create a new ManagedElement",
-			 "tool.small.bundle", "mngr.figures",
+			 "tool.description", "Creates a new ManagedElement",
+			 "tool.small.bundle", "mngr.diagram",
 			 "tool.small.path", "icons/ManagedElementS.png"
 		   });	
 	}
@@ -870,8 +870,8 @@ public class MngrPackageImpl extends EPackageImpl implements MngrPackage {
 			 "width", "2",
 			 "color", "190,190,190",
 			 "tool.name", "ManagerParameter",
-			 "tool.description", "Create a new link form a ManagerState and a ManagerParameter",
-			 "tool.small.bundle", "mngr.figures",
+			 "tool.description", "Creates a new link form a ManagerState and a ManagerParameter",
+			 "tool.small.bundle", "mngr.diagram",
 			 "tool.small.path", "icons/ParameterLinkS.png"
 		   });			
 		addAnnotation
@@ -887,8 +887,8 @@ public class MngrPackageImpl extends EPackageImpl implements MngrPackage {
 			 "style", "dot",
 			 "color", "0,0,0",
 			 "tool.name", "ManagerTransition",
-			 "tool.description", "Create a new transition from source state to target state",
-			 "tool.small.bundle", "mngr.figures",
+			 "tool.description", "Creates a new transition from source state to target state",
+			 "tool.small.bundle", "mngr.diagram",
 			 "tool.small.path", "icons/transitionS.png"
 		   });						
 		addAnnotation
@@ -899,8 +899,8 @@ public class MngrPackageImpl extends EPackageImpl implements MngrPackage {
 			 "width", "2",
 			 "color", "97,94,63",
 			 "tool.name", "OpaqueExpression",
-			 "tool.description", "Create a new link form an OpaqueExpression and a ManagerParameter",
-			 "tool.small.bundle", "mngr.figures",
+			 "tool.description", "Creates a new link form an OpaqueExpression and a ManagerParameter",
+			 "tool.small.bundle", "mngr.diagram",
 			 "tool.small.path", "icons/OpaqueExpressionS.png"
 		   });			
 	}

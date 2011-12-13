@@ -341,8 +341,8 @@ public class ExpPackageImpl extends EPackageImpl implements ExpPackage {
 			 "label.icon", "false",
 			 "label.placement", "external",
 			 "tool.name", "OpaqueExpression",
-			 "tool.description", "Create a new OpaqueExpression",
-			 "tool.small.bundle", "mngr.figures",
+			 "tool.description", "Creates a new OpaqueExpression",
+			 "tool.small.bundle", "mngr.diagram",
 			 "tool.small.path", "icons/OpaqueExpressionS.png",
 			 "phantom", "true"
 		   });

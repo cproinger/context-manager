@@ -4,20 +4,19 @@ package exp;
 import "platform:/resource/mngr/model/owner.ecore";
 import "platform:/resource/mngr/model/const.ecore";
 
-
 abstract class ValueSpecification extends owner.Element {
   ref Expression#operand expression;
   ref const.Constraint owningConstraint;
 }
-
 
 class Expression extends ValueSpecification {
   val ValueSpecification[*]#expression operand;
   attr String symbol;
 }
 
-@gmf.node(figure="figures.OpaqueExpressionFigure", label="body",label.icon="false", label.placement="external", tool.name="OpaqueExpression", tool.description="Create a new OpaqueExpression", tool.small.bundle="mngr.figures", tool.small.path="icons/OpaqueExpressionS.png", phantom="true")
+@gmf.node(figure="figures.OpaqueExpressionFigure", label="body", label.icon="false", label.placement="external", tool.name="OpaqueExpression", tool.description="Creates a new OpaqueExpression", tool.small.bundle="mngr.diagram", tool.small.path="icons/OpaqueExpressionS.png", phantom="true")
 class OpaqueExpression extends ValueSpecification {
   attr String[*] body;
   attr String[*] language;
 }
+

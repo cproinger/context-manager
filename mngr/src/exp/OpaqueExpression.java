@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  *
  * @see exp.ExpPackage#getOpaqueExpression()
- * @model annotation="gmf.node figure='figures.OpaqueExpressionFigure' label='body' label.icon='false' label.placement='external' tool.name='OpaqueExpression' tool.description='Create a new OpaqueExpression' tool.small.bundle='mngr.figures' tool.small.path='icons/OpaqueExpressionS.png' phantom='true'"
+ * @model annotation="gmf.node figure='figures.OpaqueExpressionFigure' label='body' label.icon='false' label.placement='external' tool.name='OpaqueExpression' tool.description='Creates a new OpaqueExpression' tool.small.bundle='mngr.diagram' tool.small.path='icons/OpaqueExpressionS.png' phantom='true'"
  * @generated
  */
 public interface OpaqueExpression extends ValueSpecification {

@@ -239,6 +239,8 @@ public class ValidateAction extends Action {
 	 * @generated
 	 */
 	private static int diagnosticToStatusSeverity(int diagnosticSeverity) {
+		ValRes valres = ValRes.getInstance();
+		valres.setResult(true);
 		if (diagnosticSeverity == Diagnostic.OK) {
 			return IStatus.OK;
 		} else if (diagnosticSeverity == Diagnostic.INFO) {
@@ -247,6 +249,7 @@ public class ValidateAction extends Action {
 			return IStatus.WARNING;
 		} else if (diagnosticSeverity == Diagnostic.ERROR
 				|| diagnosticSeverity == Diagnostic.CANCEL) {
+			valres.setResult(false);
 			return IStatus.ERROR;
 		}
 		return IStatus.INFO;

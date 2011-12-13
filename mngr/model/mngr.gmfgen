@@ -236,8 +236,7 @@
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
-            viewPattern="TransProb: {0}"
-            editPattern="">
+            viewPattern="TransProb: {0}">
           <metaFeatures
               href="mngr.genmodel#//mngr/ManagerTransition/transProb"/>
         </modelFacet>
@@ -259,8 +258,7 @@
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
-            viewPattern="Actions: {0}"
-            editPattern="">
+            viewPattern="Actions: {0}">
           <metaFeatures
               href="mngr.genmodel#//mngr/ManagerTransition/Action"/>
         </modelFacet>
@@ -282,8 +280,7 @@
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
-            viewPattern="Conditions: {0}"
-            editPattern="">
+            viewPattern="Conditions: {0}">
           <metaFeatures
               href="mngr.genmodel#//mngr/ManagerTransition/Condition"/>
         </modelFacet>
@@ -305,8 +302,7 @@
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
-            viewPattern="Events: {0}"
-            editPattern="">
+            viewPattern="Events: {0}">
           <metaFeatures
               href="mngr.genmodel#//mngr/ManagerTransition/Event"/>
         </modelFacet>
@@ -404,25 +400,25 @@
             xsi:type="gmfgen:ToolEntry"
             title="ManagedElement"
             description="Creates a new ManagedElement"
-            smallIconPath="/mngr.figures/icons/ManagedElementS.png"
+            smallIconPath="/mngr.diagram/icons/ManagedElementS.png"
             genNodes="//@diagram/@topLevelNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ManagerParameter"
             description="Creates a new ManagerParameter"
-            smallIconPath="/mngr.figures/icons/ManagerParameterS.png"
+            smallIconPath="/mngr.diagram/icons/ManagerParameterS.png"
             genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ManagerState"
             description="Creates a new ManagerState"
-            smallIconPath="/mngr.figures/icons/ManagerStateS.png"
+            smallIconPath="/mngr.diagram/icons/ManagerStateS.png"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="OpaqueExpression"
             description="Creates a new OpaqueExpression"
-            smallIconPath="/mngr.figures/icons/OpaqueExpressionS.png"
+            smallIconPath="/mngr.diagram/icons/OpaqueExpressionS.png"
             genNodes="//@diagram/@topLevelNodes.3"/>
       </groups>
       <groups
@@ -432,19 +428,19 @@
             xsi:type="gmfgen:ToolEntry"
             title="ManagerParameter"
             description="Creates a new link form a ManagerState and a ManagerParameter"
-            smallIconPath="/mngr.figures/icons/ParameterLinkS.png"
+            smallIconPath="/mngr.diagram/icons/ParameterLinkS.png"
             genLinks="//@diagram/@links.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="ManagerTransition"
             description="Creates a new transition from source state to target state"
-            smallIconPath="/mngr.figures/icons/transitionS.png"
+            smallIconPath="/mngr.diagram/icons/transitionS.png"
             genLinks="//@diagram/@links.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="OpaqueExpression"
             description="Creates a new link form an OpaqueExpression and a ManagerParameter"
-            smallIconPath="/mngr.figures/icons/OpaqueExpressionS.png"
+            smallIconPath="/mngr.diagram/icons/OpaqueExpressionS.png"
             genLinks="//@diagram/@links.2"/>
       </groups>
     </palette>

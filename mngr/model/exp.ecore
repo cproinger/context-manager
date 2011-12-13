@@ -21,8 +21,8 @@
       <details key="label.icon" value="false"/>
       <details key="label.placement" value="external"/>
       <details key="tool.name" value="OpaqueExpression"/>
-      <details key="tool.description" value="Create a new OpaqueExpression"/>
-      <details key="tool.small.bundle" value="mngr.figures"/>
+      <details key="tool.description" value="Creates a new OpaqueExpression"/>
+      <details key="tool.small.bundle" value="mngr.diagram"/>
       <details key="tool.small.path" value="icons/OpaqueExpressionS.png"/>
       <details key="phantom" value="true"/>
     </eAnnotations>

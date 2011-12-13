@@ -95,30 +95,30 @@ public class MngrNavigatorLabelProvider extends LabelProvider implements
 	 */
 	public Image getImage(View view) {
 		switch (MngrVisualIDRegistry.getVisualID(view)) {
-		case ManagerEditPart.VISUAL_ID:
+		case ManagerStateContextParametersEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://www.kermeta.org/mngr?Manager", MngrElementTypes.Manager_1000); //$NON-NLS-1$
+					"Navigator?Link?http://www.kermeta.org/mngr?ManagerState?contextParameters", MngrElementTypes.ManagerStateContextParameters_4002); //$NON-NLS-1$
 		case ManagerStateEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.kermeta.org/mngr?ManagerState", MngrElementTypes.ManagerState_2001); //$NON-NLS-1$
-		case ManagerParameterEditPart.VISUAL_ID:
+		case ManagerEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.kermeta.org/mngr?ManagerParameter", MngrElementTypes.ManagerParameter_2002); //$NON-NLS-1$
-		case ManagedElementEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.kermeta.org/mngr?ManagedElement", MngrElementTypes.ManagedElement_2003); //$NON-NLS-1$
-		case OpaqueExpressionEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.kermeta.org/exp?OpaqueExpression", MngrElementTypes.OpaqueExpression_2004); //$NON-NLS-1$
+					"Navigator?Diagram?http://www.kermeta.org/mngr?Manager", MngrElementTypes.Manager_1000); //$NON-NLS-1$
 		case ManagerParameterOpaqueExpressionsEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.kermeta.org/mngr?ManagerParameter?opaqueExpressions", MngrElementTypes.ManagerParameterOpaqueExpressions_4003); //$NON-NLS-1$
 		case ManagerTransitionEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.kermeta.org/mngr?ManagerTransition", MngrElementTypes.ManagerTransition_4001); //$NON-NLS-1$
-		case ManagerStateContextParametersEditPart.VISUAL_ID:
+		case ManagerParameterEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.kermeta.org/mngr?ManagerState?contextParameters", MngrElementTypes.ManagerStateContextParameters_4002); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.kermeta.org/mngr?ManagerParameter", MngrElementTypes.ManagerParameter_2002); //$NON-NLS-1$
+		case OpaqueExpressionEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.kermeta.org/exp?OpaqueExpression", MngrElementTypes.OpaqueExpression_2004); //$NON-NLS-1$
+		case ManagedElementEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.kermeta.org/mngr?ManagedElement", MngrElementTypes.ManagedElement_2003); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -171,22 +171,22 @@ public class MngrNavigatorLabelProvider extends LabelProvider implements
 			return getUnresolvedDomainElementProxyText(view);
 		}
 		switch (MngrVisualIDRegistry.getVisualID(view)) {
-		case ManagerEditPart.VISUAL_ID:
-			return getManager_1000Text(view);
+		case ManagerStateContextParametersEditPart.VISUAL_ID:
+			return getManagerStateContextParameters_4002Text(view);
 		case ManagerStateEditPart.VISUAL_ID:
 			return getManagerState_2001Text(view);
-		case ManagerParameterEditPart.VISUAL_ID:
-			return getManagerParameter_2002Text(view);
-		case ManagedElementEditPart.VISUAL_ID:
-			return getManagedElement_2003Text(view);
-		case OpaqueExpressionEditPart.VISUAL_ID:
-			return getOpaqueExpression_2004Text(view);
+		case ManagerEditPart.VISUAL_ID:
+			return getManager_1000Text(view);
 		case ManagerParameterOpaqueExpressionsEditPart.VISUAL_ID:
 			return getManagerParameterOpaqueExpressions_4003Text(view);
 		case ManagerTransitionEditPart.VISUAL_ID:
 			return getManagerTransition_4001Text(view);
-		case ManagerStateContextParametersEditPart.VISUAL_ID:
-			return getManagerStateContextParameters_4002Text(view);
+		case ManagerParameterEditPart.VISUAL_ID:
+			return getManagerParameter_2002Text(view);
+		case OpaqueExpressionEditPart.VISUAL_ID:
+			return getOpaqueExpression_2004Text(view);
+		case ManagedElementEditPart.VISUAL_ID:
+			return getManagedElement_2003Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -194,13 +194,18 @@ public class MngrNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getManager_1000Text(View view) {
-		Manager domainModelElement = (Manager) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
+	private String getManagerStateContextParameters_4002Text(View view) {
+		IParser parser = MngrParserProvider.getParser(
+				MngrElementTypes.ManagerStateContextParameters_4002,
+				view.getElement() != null ? view.getElement() : view,
+				CommonParserHint.DESCRIPTION);
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
 			MngrDiagramEditorPlugin.getInstance().logError(
-					"No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+					"Parser was not found for label " + 6005); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -228,59 +233,13 @@ public class MngrNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getManagerParameter_2002Text(View view) {
-		IParser parser = MngrParserProvider.getParser(
-				MngrElementTypes.ManagerParameter_2002,
-				view.getElement() != null ? view.getElement() : view,
-				MngrVisualIDRegistry
-						.getType(ManagerParameterNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
+	private String getManager_1000Text(View view) {
+		Manager domainModelElement = (Manager) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
 		} else {
 			MngrDiagramEditorPlugin.getInstance().logError(
-					"Parser was not found for label " + 5002); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getManagedElement_2003Text(View view) {
-		IParser parser = MngrParserProvider.getParser(
-				MngrElementTypes.ManagedElement_2003,
-				view.getElement() != null ? view.getElement() : view,
-				MngrVisualIDRegistry
-						.getType(ManagedElementNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			MngrDiagramEditorPlugin.getInstance().logError(
-					"Parser was not found for label " + 5003); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getOpaqueExpression_2004Text(View view) {
-		IParser parser = MngrParserProvider.getParser(
-				MngrElementTypes.OpaqueExpression_2004,
-				view.getElement() != null ? view.getElement() : view,
-				MngrVisualIDRegistry
-						.getType(OpaqueExpressionBodyEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			MngrDiagramEditorPlugin.getInstance().logError(
-					"Parser was not found for label " + 5004); //$NON-NLS-1$
+					"No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -327,18 +286,59 @@ public class MngrNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getManagerStateContextParameters_4002Text(View view) {
+	private String getManagerParameter_2002Text(View view) {
 		IParser parser = MngrParserProvider.getParser(
-				MngrElementTypes.ManagerStateContextParameters_4002,
+				MngrElementTypes.ManagerParameter_2002,
 				view.getElement() != null ? view.getElement() : view,
-				CommonParserHint.DESCRIPTION);
+				MngrVisualIDRegistry
+						.getType(ManagerParameterNameEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(
 					view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			MngrDiagramEditorPlugin.getInstance().logError(
-					"Parser was not found for label " + 6005); //$NON-NLS-1$
+					"Parser was not found for label " + 5002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getOpaqueExpression_2004Text(View view) {
+		IParser parser = MngrParserProvider.getParser(
+				MngrElementTypes.OpaqueExpression_2004,
+				view.getElement() != null ? view.getElement() : view,
+				MngrVisualIDRegistry
+						.getType(OpaqueExpressionBodyEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			MngrDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5004); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getManagedElement_2003Text(View view) {
+		IParser parser = MngrParserProvider.getParser(
+				MngrElementTypes.ManagedElement_2003,
+				view.getElement() != null ? view.getElement() : view,
+				MngrVisualIDRegistry
+						.getType(ManagedElementNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			MngrDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

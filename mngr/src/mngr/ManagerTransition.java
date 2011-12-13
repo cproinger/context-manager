@@ -33,7 +33,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see mngr.MngrPackage#getManagerTransition()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='TransProbMax1 ManagerTransitionUndefinedName'"
- *        annotation="gmf.link label='transProb, Event, Action, Condition' label.pattern='{0}:{1}:{2}:{3}' target.decoration='closedarrow' width='2' source='source' target='target' style='dot' color='0,0,0' tool.name='ManagerTransition' tool.description='Create a new transition from source state to target state' tool.small.bundle='mngr.figures' tool.small.path='icons/transitionS.png'"
+ *        annotation="gmf.link label='transProb, Event, Action, Condition' label.pattern='{0}:{1}:{2}:{3}' target.decoration='closedarrow' width='2' source='source' target='target' style='dot' color='0,0,0' tool.name='ManagerTransition' tool.description='Creates a new transition from source state to target state' tool.small.bundle='mngr.diagram' tool.small.path='icons/transitionS.png'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot TransProbMax1='transProb <= 1.0 and not transProb.oclIsUndefined()' ManagerTransitionUndefinedName='not name.oclIsUndefined()'"
  * @generated
  */

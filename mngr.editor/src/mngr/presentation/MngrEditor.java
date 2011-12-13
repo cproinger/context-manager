@@ -1476,6 +1476,8 @@ public class MngrEditor
 	 */
 	@Override
 	public void doSave(IProgressMonitor progressMonitor) {
+		return;
+		/*
 		// Save only resources that have actually changed.
 		//
 		final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
@@ -1527,7 +1529,7 @@ public class MngrEditor
 			MngrEditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
-		updateProblemIndication();
+		updateProblemIndication();*/
 	}
 
 	/**
@@ -1560,7 +1562,7 @@ public class MngrEditor
 	 */
 	@Override
 	public boolean isSaveAsAllowed() {
-		return true;
+		return false;
 	}
 
 	/**

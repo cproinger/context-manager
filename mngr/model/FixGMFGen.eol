@@ -1,2 +1,0 @@
-var plugin := GmfGen!GenPlugin.all.first;
-plugin.requiredPlugins.add('mngr.figures');

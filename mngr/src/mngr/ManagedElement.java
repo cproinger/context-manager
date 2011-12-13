@@ -23,7 +23,7 @@ import named.NamedElement;
  *
  * @see mngr.MngrPackage#getManagedElement()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ManagedElementUndefinedName'"
- *        annotation="gmf.node figure='figures.ManagedElementFigure' label='name' label.icon='false' label.placement='external' tool.name='ManagedElement' tool.description='Create a new ManagedElement' tool.small.bundle='mngr.figures' tool.small.path='icons/ManagedElementS.png'"
+ *        annotation="gmf.node figure='figures.ManagedElementFigure' label='name' label.icon='false' label.placement='external' tool.name='ManagedElement' tool.description='Creates a new ManagedElement' tool.small.bundle='mngr.diagram' tool.small.path='icons/ManagedElementS.png'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot ManagedElementUndefinedName='not name.oclIsUndefined()'"
  * @generated
  */
